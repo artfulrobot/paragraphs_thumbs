@@ -1,0 +1,42 @@
+<?php
+
+function paragraphs_thumbs_form_alter(&$form, &$form_state, $hook) {
+
+  // Is this a node form?
+  if (!preg_match('/_node_form$/', $hook)) {
+    return;
+  }
+  // Does this form have any paragraph items?
+
+  foreach (element_children($form) as $key) {
+    if (preg_match('/field_/', $key)
+      && preg_match('/^paragraphs_field_/', $form[$key]['und']['#theme'])) {
+      // Looks like we have a paragraphs field.
+
+      $available_bundles = paragraphs_bundle_load();
+      $thumbs = [];
+      foreach ($available_bundles as $bundle) {
+        $_ = 'public://paragraphs-thumbs/' . $bundle->bundle . '.png';
+        if (file_exists($_)) {
+          $thumbs[$bundle->name] = file_create_url($_);
+        }
+      }
+      $form[$key]['und']['#attached']['js'][] = [
+        'type' => 'setting',
+        'data' => ['pp_thumbs' => $thumbs],
+      ];
+      $form[$key]['und']['#attached']['js'][] = [
+        'type' => 'file',
+        'data' => drupal_get_path('module', 'paragraphs_thumbs') . '/js/pp-thumbs.js',
+      ];
+      $form[$key]['und']['#attached']['css'][] = [
+        'type' => 'file',
+        'data' => drupal_get_path('module', 'paragraphs_thumbs') . '/css/pp-thumbs.css',
+      ];
+
+      // Only need this once.
+      break;
+    }
+  }
+    // See if we have previews for any of these.
+}

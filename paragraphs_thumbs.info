@@ -1,0 +1,9 @@
+name = Paragraphs Thumbnails
+description = "Provide thumbnails for selecting a paragraph type"
+core = 7.x
+version = "7.x-1.0"
+
+; The main classes.
+files[] = paragraphs_thumbs.module
+
+
