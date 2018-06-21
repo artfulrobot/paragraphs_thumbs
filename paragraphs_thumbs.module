@@ -10,7 +10,7 @@ function paragraphs_thumbs_form_alter(&$form, &$form_state, $hook) {
 
   foreach (element_children($form) as $key) {
     if (preg_match('/field_/', $key)
-      && preg_match('/^paragraphs_field_/', $form[$key]['und']['#theme'])) {
+      && preg_match('/^paragraphs_field_/', $form[$key]['und']['#theme'] ?? '')) {
       // Looks like we have a paragraphs field.
 
       $available_bundles = paragraphs_bundle_load();
