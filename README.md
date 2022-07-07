@@ -1,18 +1,11 @@
-# Paragraphs Thumbs
+# Give Up GitHub
 
-Provides thumbnails examples instead of the [Paragraphs module](https://www.drupal.org/project/paragraphs) add buttons.
+This project has given up GitHub.  ([See Software Freedom Conservancy's *Give Up  GitHub* site for details](https://GiveUpGitHub.org).)
 
-![Screenshot](images/paragraphs-thumbs-screenshot.png)
+You can now find this project at [Codeberg](https://codeberg.org/artfulrobot/paragraphs_thumbs) instead.
 
-## Usage
+Any use of this project's code by GitHub Copilot, past or present, is done without our permission.  We do not consent to GitHub's use of this project's code in Copilot.
 
-Create a directory `paragraphs-thumbs` inside your public files dir. In here you
-can put 600px wide PNG images named using the machine names of your paragraphs
-bundles.
+Join us; you can [give up GitHub](https://GiveUpGitHub.org) too!
 
-This image will then replace the standard submit button for adding a paragraph
-of that style.
-
-## Author
-
-[Artful Robot](https://artfulrobot.uk) - Stitching together the best open source technologies to help campaigns, charities and not-for-profits communicate beautifully.
+![Logo of the GiveUpGitHub campaign](https://sfconservancy.org/img/GiveUpGitHub.png)
